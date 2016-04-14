@@ -2,17 +2,20 @@ package com.jaxdid.fizzbuzz;
 
 public class FizzBuzz {
     public static Object play(int number) {
-        if ( number % 3 == 0 && number % 5 == 0 ) {
+        if (isDivisibleBy(number, 15)) {
             return "fizzbuzz";
         }
-        else if (number % 5 == 0) {
+        else if (isDivisibleBy(number, 5)) {
             return "buzz";
         }
-        else if (number % 3 == 0) {
+        else if (isDivisibleBy(number, 3)) {
             return "fizz";
         }
-        else {
-            return number;
-        }
+
+        return number;
+    }
+
+    private static boolean isDivisibleBy(int number, int divisor) {
+        return number % divisor == 0;
     }
 }
